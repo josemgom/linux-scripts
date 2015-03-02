@@ -1,7 +1,7 @@
 #!/bin/bash
 # TO DO:
 # VERSION:
-# AUTHOR:
+# AUTHOR: Jose Manuel Gonzalez Maldonado
 
 
 if [ "$NAGIOS_SERVICESTATE" = "CRITICAL" ]; then
