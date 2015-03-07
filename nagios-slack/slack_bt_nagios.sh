@@ -3,7 +3,7 @@
 # VERSION:
 # AUTHOR: Jose Manuel Gonzalez Maldonado
 
-WEBHOOK="https://hooks.slack.com/services/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"
+WEBHOOK=""
 ICON=":bell:"
 TITLE="New alert in ${NAGIOS_HOSTNAME}"
 MESSAGE="Service: ${NAGIOS_SERVICEDISPLAYNAME}\n Alert: ${NAGIOS_SERVICEOUTPUT}"
