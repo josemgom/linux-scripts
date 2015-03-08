@@ -5,8 +5,8 @@ This script allows the possibility to send Nagios's alerts notifications to a sp
 
 # Configuration 
 
-* Add the contacts.cfg content in your contacts.cfg file in Nagios. If you installed Nagios in a Ubuntu system using apt-get, you can locate the contacts.cfg file at /etc/nagios3/conf.d/contacts_nagios2.cfg
-* Add the commands.cfg content at the end of your commands.cfg file in Nagios. If you installed Nagios in a Ubuntu system using apt-get, you can locate the contacts.cfg file at /etc/nagios3/commands.cfg
+* Add the contacts.cfg content in your contacts.cfg file in Nagios. If you have installed Nagios in a Ubuntu system using apt-get, you can locate the contacts.cfg file at /etc/nagios3/conf.d/contacts_nagios2.cfg
+* Add the commands.cfg content at the end of your commands.cfg file in Nagios. If you have installed Nagios in a Ubuntu system using apt-get, you can locate the contacts.cfg file at /etc/nagios3/commands.cfg
 * Put the script slack_bt_nagios in /usr/bin/ and then configure the following vars
 
 ```
