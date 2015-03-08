@@ -11,6 +11,7 @@ This script allows the possibility to send Nagios's alerts notifications to a sp
 
 ```
 SLACK_CHANNEL="#nagios-alerts" # Here you can set the channel for receive the alerts
+SLACK_NAGIOS_BOTNAME="nagios" # Set the name of the bot
 SLACK_WEBHOOK="" # Here you have to add the Webhook url provided by the Slack Incoming Hook integration
 SLACK_ICON=":bell:" # Set the emoji icon for your alerts :-)
 SLACK_ALERT_TITLE="*New alert in ${NAGIOS_HOSTNAME}*" # Set the alert title
