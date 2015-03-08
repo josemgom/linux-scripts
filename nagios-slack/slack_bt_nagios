@@ -1,0 +1,29 @@
+#!/bin/bash
+# TO DO: Setup Wizard
+# VERSION: 0.1
+# AUTHOR: Jose Manuel Gonzalez Maldonado
+
+# Variables for Slack
+SLACK_CHANNEL="#nagios-alerts"
+SLACK_WEBHOOK=""
+SLACK_ICON=":bell:"
+SLACK_ALERT_TITLE="New alert in ${NAGIOS_HOSTNAME}"
+SLACK_ALERT_MESSAGE="Service: ${NAGIOS_SERVICEDISPLAYNAME}\n Alert: ${NAGIOS_SERVICEOUTPUT}"
+
+# Set the alert color
+
+if [ "$NAGIOS_SERVICESTATE" = "CRITICAL" ]; then
+    SLACK_ALERT_COLOR="#FF0000"
+elif [ "$NAGIOS_SERVICESTATE" = "WARNING" ]; then
+    SLACK_ALERT_COLOR="#FFF300"
+elif [ "$NAGIOS_SERVICESTATE" = "OK" ]; then
+    SLACK_ALERT_COLOR="#2FFF00"
+else
+    SLACK_ALERT_COLOR="#000000"
+fi
+
+# Define the JSON for the Incoming Webhook
+JSON='payload={"channel": "'"$SLACK_CHANNEL"'", "username": "nagios","icon_emoji": "'"$SLACK_ICON"'", "color": "'"$SLACK_ALERT_COLOR"'", "pretext": "'"$SLACK_ALERT_TITLE"'", "short": true, "text": "'"$SLACK_ALERT_MESSAGE"'"}'
+
+# Call to curl sending the JSON to the Slack Webhook URL
+curl -X POST --data-urlencode "$JSON" $SLACK_WEBHOOK
