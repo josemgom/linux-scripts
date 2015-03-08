@@ -11,6 +11,8 @@ SLACK_ICON=":bell:"
 SLACK_ALERT_TITLE="New alert in ${NAGIOS_HOSTNAME}"
 SLACK_ALERT_MESSAGE="Service: ${NAGIOS_SERVICEDISPLAYNAME}\n Alert: ${NAGIOS_SERVICEOUTPUT}"
 
+# Checking empty values
+
 if [ -z $SLACK_CHANNEL ]; then
     echo "SLACK_CHANNEL cannot be empty"
 elif [ -z $SLACK_WEBHOOK ]; then
