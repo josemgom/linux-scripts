@@ -17,6 +17,6 @@ SLACK_ALERT_TITLE="*New alert in ${NAGIOS_HOSTNAME}*" # Set the alert title
 SLACK_ALERT_MESSAGE="*Service:* ${NAGIOS_SERVICEDISPLAYNAME}\n *Alert:* ${NAGIOS_SERVICEOUTPUT}" # Set the message for your alert.                                                                      
 ```
 
-# Screenshot Example
+# Screenshot
 
 ![Alt text](http://i145.photobucket.com/albums/r216/nerkoh/alert_slack_example_zpsxyxbtvwz.png "Optional title")
