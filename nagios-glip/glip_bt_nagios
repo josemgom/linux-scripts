@@ -1,0 +1,39 @@
+#!/bin/bash
+# TO DO: Setup Wizard
+# VERSION: 0.1
+# AUTHOR: Jose Manuel Gonzalez Maldonado
+
+# Variables for Slack
+GLIP_WEBHOOK="https://hooks.glip.com/webhook/9e0bff1c-74fb-4af4-b095-8996ae34e408"
+GLIP_ACTIVITY="Nagios Alert"
+GLIP_ALERT_DESC="**New alert in** ${NAGIOS_HOSTNAME}"
+GLIP_ALERT_MESSAGE="* **Service:** ${NAGIOS_SERVICEDISPLAYNAME}\n * **Alert:** ${NAGIOS_SERVICEOUTPUT}"
+
+# Checking empty values
+
+if [ -z $GLIP_WEBHOOK ]; then
+    echo "GLIP_WEBHOOK cannot be empty"
+elif [[ -z $GLIP_ACTIVITY ]]; then
+    echo "GLIP_ACTIVITY cannot be empty"
+elif [[ -z $GLIP_ALERT_DESC ]]; then
+    echo "GLIP_ALERT_TITLE cannot be empty"
+elif [[ -z $GLIP_ALERT_MESSAGE ]]; then
+    echo "GLIP_ALERT_MESSAGE cannot be empty"
+else
+    # Set the alert color
+
+    if [ "$NAGIOS_SERVICESTATE" = "CRITICAL" ]; then
+        GLIP_ICON=":heavy_exclamation_mark:"
+    elif [ "$NAGIOS_SERVICESTATE" = "WARNING" ]; then
+        GLIP_ICON=":warning:"
+    elif [ "$NAGIOS_SERVICESTATE" = "OK" ]; then
+        GLIP_ICON=":white_check_mark:"
+    else
+        GLIP_ICON=":bell:"
+    fi
+
+    # Define the JSON for the Incoming Webhook
+    JSON='{"icon": "'"$GLIP_ICON"'", "activity": "'"$GLIP_ACTIVITY"'", "title": "'"$GLIP_ALERT_DESC"'", "body": "'"$GLIP_ALERT_MESSAGE"'"}'
+   # Call to curl sending the JSON to the Glip Webhook URL
+    curl -X POST -H "Content-Type: application/json" -d "$JSON" $GLIP_WEBHOOK
+fi
