@@ -33,7 +33,7 @@ else
     fi
 
     # Define the JSON for the Incoming Webhook
-    JSON='{"icon": "'"$GLIP_ICON"'", "activity": "'"$GLIP_ACTIVITY"'", "title": "'"$GLIP_ALERT_DESC"'", "body": "'"$GLIP_ALERT_MESSAGE"'"}'
+    JSON='{"activity": "'"$GLIP_ACTIVITY"'", "title": "'"$GLIP_ALERT_DESC"'", "body": "'"$GLIP_ALERT_MESSAGE"'"}'
     # Call to curl sending the JSON to the Glip Webhook URL
     curl -X POST -H "Content-Type: application/json" -d "$JSON" $GLIP_WEBHOOK
 fi
