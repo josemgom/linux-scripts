@@ -3,11 +3,11 @@
 # VERSION: 0.1
 # AUTHOR: Jose Manuel Gonzalez Maldonado
 
-# Variables for Slack
+# Variables for Glip
 GLIP_WEBHOOK="https://hooks.glip.com/webhook/9e0bff1c-74fb-4af4-b095-8996ae34e408"
 GLIP_ACTIVITY="Nagios Alert"
-GLIP_ALERT_DESC="**New alert in** ${NAGIOS_HOSTNAME}"
-GLIP_ALERT_MESSAGE="* **Service:** ${NAGIOS_SERVICEDISPLAYNAME}\n * **Alert:** ${NAGIOS_SERVICEOUTPUT}"
+GLIP_ALERT_DESC="New alert in ${NAGIOS_HOSTNAME}"
+GLIP_ALERT_MESSAGE="Service: ${NAGIOS_SERVICEDISPLAYNAME}\n Alert: ${NAGIOS_SERVICEOUTPUT}"
 
 # Checking empty values
 
