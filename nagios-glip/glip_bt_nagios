@@ -1,5 +1,6 @@
 #!/bin/bash
 # TO DO: Setup Wizard
+# INFO: If you want to add a custom image in the notifications, can't use emoji icons, you have to use send it by url.
 # VERSION: 0.1
 # AUTHOR: Jose Manuel Gonzalez Maldonado
 
