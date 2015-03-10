@@ -10,7 +10,7 @@ This script allows the possibility to send Nagios's alerts notifications to a sp
 * Put the script glip_bt_nagios in /usr/bin/ and then configure the following vars
 
 ```
-GLIP_WEBHOOK="" # Here you have to add the Webhook url provided by the Slack Incoming Hook integration
+GLIP_WEBHOOK="" # Here you have to add the Webhook url provided by the Glip Incoming Hook integration
 GLIP_ACTIVITY="Nagios Alert" # Set the alert title
 GLIP_ALERT_DESC="**New alert in** ${NAGIOS_HOSTNAME}" # Set de alert description
 GLIP_ALERT_MESSAGE="* **Service:** ${NAGIOS_SERVICEDISPLAYNAME}\n * **Alert:** ${NAGIOS_SERVICEOUTP
