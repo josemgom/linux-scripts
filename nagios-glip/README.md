@@ -18,3 +18,5 @@ GLIP_ALERT_MESSAGE="* **Service:** ${NAGIOS_SERVICEDISPLAYNAME}\n * **Alert:** $
 
 # Screenshot
 
+![Alt text](http://i145.photobucket.com/albums/r216/nerkoh/nagios_bt_glip_zps6rwvtybn.png "Nagios alert in Glip")
+
