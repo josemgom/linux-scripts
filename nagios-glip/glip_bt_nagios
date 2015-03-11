@@ -1,5 +1,5 @@
 #!/bin/bash
-# TO DO: Setup Wizard
+# TO DO: Setup Wizard, Custom ICONS for all alerts.
 # INFO: If you want to add a custom image in the notifications, can't use emoji icons, you have to use send it by url.
 # VERSION: 0.1
 # AUTHOR: Jose Manuel Gonzalez Maldonado
@@ -21,17 +21,6 @@ elif [[ -z $GLIP_ALERT_DESC ]]; then
 elif [[ -z $GLIP_ALERT_MESSAGE ]]; then
     echo "GLIP_ALERT_MESSAGE cannot be empty"
 else
-    # Set the alert color
-
-    if [ "$NAGIOS_SERVICESTATE" = "CRITICAL" ]; then
-        GLIP_ICON=":heavy_exclamation_mark:"
-    elif [ "$NAGIOS_SERVICESTATE" = "WARNING" ]; then
-        GLIP_ICON=":warning:"
-    elif [ "$NAGIOS_SERVICESTATE" = "OK" ]; then
-        GLIP_ICON=":white_check_mark:"
-    else
-        GLIP_ICON=":bell:"
-    fi
 
     # Define the JSON for the Incoming Webhook
     JSON='{"activity": "'"$GLIP_ACTIVITY"'", "title": "'"$GLIP_ALERT_DESC"'", "body": "'"$GLIP_ALERT_MESSAGE"'"}'
