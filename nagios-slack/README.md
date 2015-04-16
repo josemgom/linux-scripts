@@ -15,7 +15,8 @@ SLACK_NAGIOS_BOTNAME="nagios" # Set the name of the bot
 SLACK_WEBHOOK="" # Here you have to add the Webhook url provided by the Slack Incoming Hook integration
 SLACK_ICON=":bell:" # Set the emoji icon for your alerts :-)
 SLACK_ALERT_TITLE="*New alert in ${NAGIOS_HOSTNAME}*" # Set the alert title
-SLACK_ALERT_MESSAGE="*Service:* ${NAGIOS_SERVICEDISPLAYNAME}\n *Alert:* ${NAGIOS_SERVICEOUTPUT}" # Set the message for your alert.                                                                      
+SLACK_ALERT_MESSAGE="*Service:* ${NAGIOS_SERVICEDISPLAYNAME}\n \
+*Alert:* ${NAGIOS_SERVICEOUTPUT}" # Set the message for your alert.                                                                      
 ```
 
 # Screenshot
